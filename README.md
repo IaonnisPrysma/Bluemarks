@@ -9,6 +9,8 @@ Compatible with Paper and Folia (Minecraft 1.19.x and newer).
 
 > Bluemarks combines and modifies **BlueMapSignMarkers** (kugge) and **BlueMapPortalMarkers** (Max Aldis), see [Credits](#credits).
 
+![Banner](banner.png)  
+
 ## Setup
 
 Build with `gradlew build` (needs JDK 17 or newer, any version) and put `build/libs/Bluemarks-<version>.jar` into `plugins`  
