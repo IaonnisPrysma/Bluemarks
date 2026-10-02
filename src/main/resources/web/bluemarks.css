@@ -1,0 +1,14 @@
+/* Bluemarks icons: fixed base size, centered on the marker position, scaled by bluemarks.js.
+ * ".signmarker" is the class used by the original BlueMapSignMarkers, kept so old markers still render. */
+.bluemarks img,
+img.bluemarks,
+.signmarker img,
+img.signmarker {
+    height: var(--bm-height, auto);
+    width: auto;
+    max-width: none;
+    max-height: none;
+    translate: -50% -50%;
+    scale: var(--bm-scale, 1);
+    transform-origin: center center;
+}
