@@ -1,7 +1,8 @@
 # Bluemarks
 
-Bluemarks adds Dynmap-style sign markers to BlueMap.  
-Compatible with Paper and Folia (Minecraft 1.19.x and newer).
+Bluemarks adds Dynmap-style sign markers to BlueMap.
+Directly inspired by Pl3xmarkers features: https://modrinth.com/plugin/pl3xmarkers
+Compatible with Paper and Folia (Minecraft 1.19.x - 26.3).
 
 ![Bluemarks](banner.png)  
 
