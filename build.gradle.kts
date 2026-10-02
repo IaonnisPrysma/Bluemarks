@@ -2,8 +2,8 @@ plugins {
     `java-library`
 }
 
-group = "dev.kugge"
-version = "0.1.0"
+group = "dev.iaonnis"
+version = "0.2.0"
 
 repositories {
     mavenLocal()
@@ -13,8 +13,10 @@ repositories {
 }
 
 dependencies {
-    // Oldest APIs we support, so the jar also runs on everything newer.
-    compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
+    // Oldest API we support, so the jar also runs on everything newer. folia-api is a superset of paper-api,
+    // so compiling against it keeps the plugin honest about Folia (region threads, schedulers) while still
+    // running on plain Paper / Spigot-derived servers.
+    compileOnly("dev.folia:folia-api:1.19.4-R0.1-SNAPSHOT")
     compileOnly("com.github.BlueMap-Minecraft:BlueMapAPI:v2.4.0")
 }
 
@@ -31,5 +33,5 @@ tasks.processResources {
 }
 
 tasks.jar {
-    archiveFileName.set("SignMarkers-${project.version}.jar")
+    archiveFileName.set("Bluemarks-${project.version}.jar")
 }

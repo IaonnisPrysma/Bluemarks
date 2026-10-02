@@ -1,8 +1,19 @@
-name: BlueMapSignMarkers
+name: Bluemarks
 version: ${version}
-main: dev.kugge.signmarkers.SignMarkers
+main: dev.iaonnis.bluemarks.Bluemarks
 api-version: 1.19
 folia-supported: true
-authors: [kugge]
+# Bluemarks by iaonnis. Built on BlueMapSignMarkers by kugge (https://github.com/KaiijuMC/BlueMapSignMarkers)
+# and BlueMapPortalMarkers by Max Aldis (https://github.com/maldis018/BlueMapPortalMarkers).
+authors: [iaonnis, kugge, Max Aldis]
 depend: [BlueMap]
-description: Add markers to BlueMap with signs
+description: Sign markers and nether portal markers for BlueMap (fork of BlueMapSignMarkers + BlueMapPortalMarkers)
+commands:
+  bluemarks:
+    description: Bluemarks admin commands.
+    usage: /bluemarks portals <reload|sweep|stats|purge>
+    permission: bluemarks.admin
+permissions:
+  bluemarks.admin:
+    description: Use the /bluemarks admin commands.
+    default: op

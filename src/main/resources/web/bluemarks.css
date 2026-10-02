@@ -1,0 +1,22 @@
+/* Bluemarks icons: fixed base size, centered on the marker position, scaled by bluemarks.js.
+ * ".signmarker" is the class used by the original BlueMapSignMarkers, kept so old markers still render. */
+.bluemarks img,
+img.bluemarks,
+.signmarker img,
+img.signmarker {
+    height: var(--bm-height, auto);
+    width: auto;
+    max-width: none;
+    max-height: none;
+    translate: -50% -50%;
+    scale: var(--bm-scale, 1);
+    transform-origin: center center;
+}
+
+/* "Go to linked portal" links in portal popups (from BlueMapPortalMarkers by Max Aldis, GPL-3.0).
+ * BlueMap's marker renderer sets pointer-events: none on popup content, which makes the link unclickable.
+ * Scoped to the open (highlighted) popup so a closed popup can't sit invisibly over the icon and eat clicks. */
+#map-container .bm-marker-html.bm-marker-highlight .bm-marker-poi-label a,
+#map-container .bm-marker-popup a {
+    pointer-events: auto;
+}

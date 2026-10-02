@@ -14,5 +14,49 @@ scaling:
   min-scale: 0.3
   max-scale: 1.5
 
-# Print the detected camera distance and scale to the browser console (F12) for troubleshooting.
+# Print the detected camera distance and scale to the browser console (F12), and verbose portal diagnostics
+# to the server console, for troubleshooting.
 debug: false
+
+# ---------------------------------------------------------------------------------------------------------
+# Nether portal markers (merged from BlueMapPortalMarkers by Max Aldis). Commands: /bluemarks portals ...
+# Portals use the same icon pipeline as sign markers: the icon is a file in bluemap/web/markers, drawn at
+# `icon-size` and zoom-scaled by the `scaling.*` settings above.
+# ---------------------------------------------------------------------------------------------------------
+portals:
+  enabled: true
+  # Label of the toggleable layer in the BlueMap UI.
+  label: "Nether Portals"
+  # Start with the layer hidden (players toggle it on).
+  default-hidden: false
+  # Icon file in bluemap/web/markers (extension optional). nether-portal.webp is bundled and copied there
+  # automatically. If the file is missing, BlueMap's default POI icon is used.
+  icon: "nether-portal.webp"
+  # Camera distance range (blocks) in which a portal is visible. 0 = no limit.
+  min-distance: 0
+  max-distance: 0
+  # Label per portal marker. Supports {world}, {x}, {y}, {z}. Empty = "Nether Portal".
+  label-template: ""
+
+  discovery:
+    # Existing portals are found through Paper's POI API (Paper 26.1+ only; on older servers only portals
+    # lit or broken while the server runs are tracked).
+    # Radius (blocks) of the sweep around spawn and online players at startup and for `sweep`.
+    sweep-radius: 256
+    # Also query a chunk's portals when it loads (cheap).
+    scan-on-chunk-load: true
+    worlds:
+      # blacklist = track all worlds except the listed ones; whitelist = only the listed ones.
+      mode: blacklist
+      list: []
+    # Periodic sweep around spawn and online players. Opt-in.
+    background-sweep:
+      enabled: false
+      interval-seconds: 300
+      max-players-per-pass: 3
+
+  linking:
+    # Show the predicted Overworld<->Nether counterpart (vanilla 8:1 rule) and a "Go to linked portal" link.
+    enabled: true
+    # Horizontal radius (blocks) around the predicted spot in which a known portal counts as the link.
+    search-tolerance: 128
