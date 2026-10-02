@@ -80,7 +80,7 @@ This will create a "TestTest" marker on the map with `bluemap/web/markers/icon_n
   were merged in from it. [Source](https://github.com/maldis018/BlueMapPortalMarkers) · [Modrinth](https://modrinth.com/plugin/bluemapportalmarkers)
 - **[BlueMap](https://bluemap.bluecolored.de/)** by Blue (BlueColored): the map and the API this plugin builds on.
 - **[Dynmap](https://github.com/webbukkit/dynmap)**: the sign marker behaviour this plugin replicates.
-- **iaonnis**: icon scaling, Folia restoration, the rename to Bluemarks and the merge of the portal markers, built on top of the originals.
+- **iaonnis**: icon scaling and new format support, bugfixing, dependancies updates and the rename to Bluemarks and the merge of the portal markers, built on top of the originals.
 
 ## License
 GPL-3.0, see [LICENCE.md](LICENCE.md). Both original plugins are GPL-3.0 too (BlueMapPortalMarkers: Copyright © 2026 Max Aldis).
