@@ -3,6 +3,8 @@
 Bluemarks adds Dynmap-style sign markers to BlueMap.  
 Compatible with Paper and Folia (Minecraft 1.19.x and newer).
 
+![Bluemarks](banner.png)  
+
 > Bluemarks is a renamed, modified fork of **BlueMapSignMarkers** by **kugge**, see [Credits](#credits).
 
 ## Setup
@@ -45,7 +47,7 @@ This will create a "TestTest" marker on the map with `bluemap/web/markers/icon_n
   [Source](https://github.com/KaiijuMC/BlueMapSignMarkers) · [Modrinth](https://modrinth.com/plugin/bluemapsignmarkers)
 - **[BlueMap](https://bluemap.bluecolored.de/)** by Blue (BlueColored): the map and the API this plugin builds on.
 - **[Dynmap](https://github.com/webbukkit/dynmap)**: the sign marker behaviour this plugin replicates.
-- **iaonnis**: icon scaling, Folia restoration and the rename to Bluemarks, built on top of the original.
+- **iaonnis**: Icon scaling with css implementation, added support for other formats aside .png, bugfixing and dependencies updates, renamed to Bluemarks, built on top of the original.
 
 ## License
 GPL-3.0, see [LICENCE.md](LICENCE.md). As required by the GPL, this is a modified version of the original work.
