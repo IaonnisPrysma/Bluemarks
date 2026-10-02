@@ -1,47 +1,35 @@
 plugins {
     `java-library`
-    id("com.github.johnrengelman.shadow") version "8.0.0"
-    id("xyz.jpenilla.run-paper") version "2.0.1"
 }
-
 
 group = "dev.kugge"
-version = "0.0.1"
-
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-}
+version = "0.1.0"
 
 repositories {
     mavenLocal()
     mavenCentral()
     maven("https://jitpack.io")
-    maven("https://oss.sonatype.org/content/groups/public/")
-    maven("https://papermc.io/repo/repository/maven-public/")
+    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
-    compileOnly("dev.folia:folia-api:1.19.4-R0.1-SNAPSHOT")
+    // Oldest APIs we support, so the jar also runs on everything newer.
+    compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
     compileOnly("com.github.BlueMap-Minecraft:BlueMapAPI:v2.4.0")
 }
 
 tasks.compileJava {
     options.encoding = Charsets.UTF_8.name()
+    // Java 17 bytecode runs on 17, 21, 25...; works with any installed JDK >= 17, no toolchain download needed.
     options.release.set(17)
 }
 
 tasks.processResources {
-    filter { line -> line.replace("\${version}", project.version.toString()) }
-}
-
-tasks.shadowJar {
-    archiveFileName.set("SignMarkers-${project.version}.jar")
+    filesMatching("plugin.yml") {
+        filter { line -> line.replace("\${version}", project.version.toString()) }
+    }
 }
 
 tasks.jar {
-    enabled = false
-}
-
-tasks.assemble {
-    dependsOn(tasks.shadowJar)
+    archiveFileName.set("SignMarkers-${project.version}.jar")
 }

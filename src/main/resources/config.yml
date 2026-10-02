@@ -1,0 +1,18 @@
+# Icons are drawn at this height (in pixels) at the reference zoom level, no matter how big
+# the source image is. Width follows the aspect ratio. Set to 0 to use each image's own size.
+icon-size: 32
+
+scaling:
+  # Shrink icons when zooming out and grow them when zooming in.
+  enabled: true
+  # Camera distance (in blocks) at which icons are shown at exactly `icon-size`.
+  reference-distance: 150
+  # How aggressively icons follow the zoom. 1.0 = strictly proportional (like a real object),
+  # 0.5 = gentle, 0 = no scaling.
+  exponent: 0.5
+  # Icons never get smaller / larger than this multiple of `icon-size`.
+  min-scale: 0.3
+  max-scale: 1.5
+
+# Print the detected camera distance and scale to the browser console (F12) for troubleshooting.
+debug: false

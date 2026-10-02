@@ -1,0 +1,11 @@
+/* Sign marker icons: fixed base size, centered on the marker position, scaled by signmarkers.js */
+.signmarker img,
+img.signmarker {
+    height: var(--sm-height, auto);
+    width: auto;
+    max-width: none;
+    max-height: none;
+    translate: -50% -50%;
+    scale: var(--sm-scale, 1);
+    transform-origin: center center;
+}
